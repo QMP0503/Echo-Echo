@@ -1,0 +1,23 @@
+// Empty state component styling
+.empty-state {
+  padding: var(--space-m);
+  border: var(--border);
+  border-style: dashed;
+  text-align: center;
+
+  &__text {
+    font-size: var(--font-size-l);
+    color: var(--color-text-header);
+    margin-bottom: var(--space-l);
+    font-weight: bold;
+  }
+
+  // CSS-only approach: show empty state only when it's the only child
+  &--only-child {
+    display: none;
+
+    &:only-child {
+      display: revert;
+    }
+  }
+}
