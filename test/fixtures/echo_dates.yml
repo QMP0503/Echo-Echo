@@ -1,0 +1,7 @@
+today:
+  echo: first
+  date: <%= Date.current %>
+
+next_week:
+  echo: first
+  date: <%= Date.current + 1.week %>

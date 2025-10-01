@@ -2,11 +2,11 @@
 
 <div class="empty-state empty-state--only-child">
   <p class="empty-state__text">
-    You don't have any quotes yet!
+    You don't have any echoes yet!
   </p>
 
-  <%= link_to "Add quote",
-              new_quote_path,
+  <%= link_to "Add echo",
+              new_echo_path,
               class: "btn btn--primary",
-              data: { turbo_frame: dom_id(Quote.new) } %>
+              data: { turbo_frame: dom_id(Echo.new) } %>
 </div>

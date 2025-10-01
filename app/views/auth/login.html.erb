@@ -1,0 +1,30 @@
+<main class="container">
+  <div class="header">
+    <h1>Login</h1>
+  </div>
+
+  <%= simple_form_for :auth, url: login_path, html: { class: "echo form" } do |f| %>
+    <%= f.input :email, 
+        input_html: { 
+          autofocus: true, 
+          placeholder: "teacher@mathclass.com"
+        } %>
+    <%= f.input :password, 
+        as: :password,
+        input_html: { 
+          placeholder: "password"
+        } %>
+    <%= f.submit "Sign in", class: "btn btn--primary" %>
+  <% end %>
+
+  <div style="margin-top: 2rem;">
+    <p>Don't have an account? <%= link_to "Sign up", signup_path, class: "btn btn--secondary" %></p>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <h3>Demo Accounts:</h3>
+    <p><strong>Math Teacher:</strong> teacher@mathclass.com / password</p>
+    <p><strong>Math Student:</strong> student@mathclass.com / password</p>
+    <p><strong>Science Student:</strong> student@scienceclass.com / password</p>
+  </div>
+</main>

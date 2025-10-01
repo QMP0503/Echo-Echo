@@ -1,14 +1,21 @@
 en:
   simple_form:
     placeholders:
-      quote:
-        name: Name of your quote
+      echo:
+        name: Name of your echo
+      echo_date:
+        date: Select a date
     labels:
-      quote:
+      echo:
         name: Name
+      echo_date:
+        date: Date
 
   helpers:
     submit:
-      quote:
-        create: Create quote
-        update: Update quote
+      echo:
+        create: Create echo
+        update: Update echo
+      echo_date:
+        create: Create date
+        update: Update date

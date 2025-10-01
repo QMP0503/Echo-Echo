@@ -1,0 +1,20 @@
+<%# Step 1: remove the form %>
+<%= turbo_stream.remove nested_dom_id(@echo, @echo_date) %>
+
+<%# Step 2: insert the updated date at the correct position %>
+<% if previous_date = @echo_date.previous_date %>
+  <%= turbo_stream.after nested_dom_id(@echo, previous_date) do %>
+    <%= render @echo_date, echo: @echo %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.prepend nested_dom_id(@echo, "echo_dates") do %>
+    <%= render @echo_date, echo: @echo %>
+  <% end %>
+<% end %>
+
+<%# Step 3: update the total count %>
+<%= turbo_stream.update dom_id(@echo, :total) do %>
+  <%= render "echos/total", echo: @echo %>
+<% end %>
+
+<%= render_turbo_stream_flash_messages %>

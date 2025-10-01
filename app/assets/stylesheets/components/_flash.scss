@@ -20,5 +20,13 @@
     background-color: var(--color-dark);
     animation: appear-then-fade 4s both;
     border-radius: 999px;
+
+    &--notice {
+      background-color: var(--color-secondary);
+    }
+
+    &--alert {
+      background-color: var(--color-primary);
+    }
   }
 }

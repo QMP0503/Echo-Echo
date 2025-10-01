@@ -1,4 +1,4 @@
-.quote {
+.echo {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,10 +14,28 @@
     padding: var(--space-xs) var(--space-m);
   }
 
+  // Make the echo name take up available space
+  > a {
+    flex: 1;
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+
   &__actions {
     display: flex;
-    flex: 0 0 auto;
-    align-self: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: var(--space-xs);
+    flex-shrink: 0;
+    
+    .btn {
+      padding: var(--space-xxs) var(--space-xs);
+      font-size: 0.875rem;
+      white-space: nowrap;
+      min-width: auto;
+    }
   }
 }
+
+
+

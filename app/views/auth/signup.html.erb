@@ -1,0 +1,31 @@
+<main class="container">
+  <div class="header">
+    <h1>Sign Up</h1>
+  </div>
+
+  <%= simple_form_for @user, url: signup_path, html: { class: "echo form" } do |f| %>
+    <%= f.input :email, 
+        input_html: { 
+          autofocus: true, 
+          placeholder: "your.email@example.com"
+        } %>
+    <%= f.input :password, 
+        as: :password,
+        input_html: { 
+          placeholder: "password"
+        } %>
+    <%= f.input :user_type, 
+        as: :select, 
+        collection: [['Student', 'student'], ['Teacher', 'teacher']],
+        prompt: "Select your role" %>
+    <%= f.input :classroom_id, 
+        as: :select, 
+        collection: @classrooms.map { |c| [c.name, c.id] },
+        prompt: "Select your classroom" %>
+    <%= f.submit "Sign up", class: "btn btn--primary" %>
+  <% end %>
+
+  <div style="margin-top: 2rem;">
+    <p>Already have an account? <%= link_to "Sign in", login_path, class: "btn btn--secondary" %></p>
+  </div>
+</main>

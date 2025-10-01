@@ -1,0 +1,25 @@
+<header class="navbar">
+  <div class="navbar__container">
+    <% if user_signed_in? %>
+      <div class="navbar__left">
+        <div class="navbar__brand"><%= current_classroom.name %></div>
+        <div class="navbar__user-info"><%= current_user.name %> (<%= current_user.user_type.capitalize %>)</div>
+      </div>
+      <div class="navbar__right">
+        <%= button_to "Sign out", logout_path, method: :delete, class: "btn btn--primary" %>
+      </div>
+    <% else %>
+      <div class="navbar__left">
+        <span class="navbar__brand">Echo-Echo</span>
+      </div>
+      <div class="navbar__right">
+        <% unless request.path == login_path %>
+          <%= link_to "Sign in", login_path, class: "btn btn--primary" %>
+        <% end %>
+        <% unless request.path == signup_path %>
+          <%= link_to "Sign up", signup_path, class: "btn btn--secondary" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</header>

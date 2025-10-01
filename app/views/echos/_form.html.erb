@@ -1,0 +1,17 @@
+<%= simple_form_for echo, html: { class: "echo form" } do |f| %>
+  <% if echo.errors.any? %>
+    <div class="error-message">
+      <%= echo.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :name, input_html: { autofocus: true, placeholder: "Name of your echo" } %>
+  <% if current_user.teacher? %>
+    <%= f.input :private, 
+        as: :boolean, 
+        label: "Private echo (only visible to teachers)",
+        input_html: { class: "form-checkbox" } %>
+  <% end %>
+  <%= link_to "Cancel", echos_path, class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>

@@ -1,0 +1,18 @@
+<%= turbo_stream_from current_classroom, "echos" %>
+
+<main class="container">
+  <div class="header">
+    <h1>Echos</h1>
+    <%= link_to "New echo",
+                new_echo_path,
+                class: "btn btn--primary",
+                data: { turbo_frame: dom_id(Echo.new) } %>
+  </div>
+
+  <%= turbo_frame_tag Echo.new %>
+
+  <%= turbo_frame_tag "echos" do %>
+    <%= render "echos/empty_state" %>
+    <%= render @echos %>
+  <% end %>
+</main>

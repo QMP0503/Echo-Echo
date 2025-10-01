@@ -1,15 +1,15 @@
-<%= turbo_frame_tag quote do %>
-  <div class="quote">
-    <%= link_to quote.name,
-                quote_path(quote),
+<%= turbo_frame_tag echo do %>
+  <div class="echo">
+    <%= link_to echo.name,
+                echo_path(echo),
                 data: { turbo_frame: "_top" } %>
-    <div class="quote__actions">
+    <div class="echo__actions">
       <%= button_to "Delete",
-                    quote_path(quote),
+                    echo_path(echo),
                     method: :delete,
                     class: "btn btn--light" %>
       <%= link_to "Edit",
-                  edit_quote_path(quote),
+                  edit_echo_path(echo),
                   class: "btn btn--light" %>
     </div>
   </div>

@@ -1,0 +1,18 @@
+<%= turbo_frame_tag nested_dom_id(echo, echo_date) do %>
+  <div class="echo-date">
+    <div class="echo-date__title">
+      <%= l(echo_date.date, format: :long) %>
+    </div>
+
+    <div class="echo-date__actions">
+      <%= button_to "Delete",
+                    [echo, echo_date],
+                    method: :delete,
+                    form: { data: { turbo_confirm: "Are you sure?" } },
+                    class: "btn btn--light" %>
+      <%= link_to "Edit",
+                  [:edit, echo, echo_date],
+                  class: "btn btn--light" %>
+    </div>
+  </div>
+<% end %>

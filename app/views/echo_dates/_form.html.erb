@@ -1,0 +1,7 @@
+<%= simple_form_for [echo, echo_date], html: { class: "form echo-date" } do |f| %>
+  <%= form_error_notification(echo_date) %>
+
+  <%= f.input :date, html5: true, input_html: { autofocus: true } %>
+  <%= link_to "Cancel", echo_path(echo), class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>

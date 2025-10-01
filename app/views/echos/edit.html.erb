@@ -1,0 +1,11 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to echo"), echo_path(@echo) %>
+
+  <div class="header">
+    <h1>Edit echo</h1>
+  </div>
+
+  <%= turbo_frame_tag @echo do %>
+    <%= render "form", echo: @echo %>
+  <% end %>
+</main>

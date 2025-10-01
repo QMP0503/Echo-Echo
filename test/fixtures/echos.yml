@@ -1,0 +1,14 @@
+first:
+  classroom: math_class
+  name: First echo
+  private: false
+
+second:
+  classroom: math_class
+  name: Second echo
+  private: false
+
+private_echo:
+  classroom: math_class
+  name: Private teacher echo
+  private: true

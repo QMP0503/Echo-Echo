@@ -1,0 +1,17 @@
+math_teacher:
+  classroom: math_class
+  email: teacher@mathclass.com
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  user_type: teacher
+
+math_student:
+  classroom: math_class
+  email: student@mathclass.com
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  user_type: student
+
+science_student:
+  classroom: science_class
+  email: student@scienceclass.com
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  user_type: student

@@ -1,0 +1,8 @@
+<%= turbo_stream.remove nested_dom_id(@echo, @echo_date) %>
+
+<%# Update the total count %>
+<%= turbo_stream.update dom_id(@echo, :total) do %>
+  <%= render "echos/total", echo: @echo %>
+<% end %>
+
+<%= render_turbo_stream_flash_messages %>
